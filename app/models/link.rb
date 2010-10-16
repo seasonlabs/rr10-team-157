@@ -9,13 +9,19 @@ class Link < ActiveRecord::Base
   end
   
   def title
-    begin
-      doc = Nokogiri::HTML(open(self['short_url']))
-      
-      doc.css('title').children.text
-    rescue
-      self['title']
+    
+    if self['title'].blank?
+      begin
+        doc = Nokogiri::HTML(open(self['short_url']))
+        
+        self['title'] = doc.css('title').children.text
+        save
+      rescue
+        self['title']
+      end
     end
+    
+    self['title'].blank? ? 'Sorry, no page title found!' : self['title']
   end
   
   
