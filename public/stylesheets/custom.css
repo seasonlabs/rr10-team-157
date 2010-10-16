@@ -4,6 +4,10 @@ body {
 	font-size:87.5%;
 }
 
+body.links {
+	background: #fff url(images/bg-links.png) top repeat-x;	
+}
+
 h1, h2, h3 {
 	font-weight:normal;
 }

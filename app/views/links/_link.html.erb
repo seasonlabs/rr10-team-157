@@ -4,8 +4,9 @@
 	<ul>
 		<li><%= link.post_date.to_s %></li>
 		<li><%= link_to link.short_url, link.short_url %></li>
-		<li>Page title</li>
+		<li>Page title - Page description</li>
 		<li>By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
+		<li><a href="#">Share in Twitter</a> <a href="#">Share in Facebook</a> <a href="#">Share in Delicious</a></li>
 	</ul>
 
 </div>
