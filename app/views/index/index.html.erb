@@ -1,1 +1,6 @@
-Hola!
+<div class="">
+    <%= link_to "Sign out", sessions_destroy_url, :id => current_user.authorizations.id if signed_in? %>
+</div>
+
+<h1>Linkodrama</h1>
+<h3>Stop the link drama</h1>
