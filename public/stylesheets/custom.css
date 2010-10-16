@@ -8,51 +8,129 @@ h1, h2, h3 {
 	font-weight:normal;
 }
 
-header, footer, section {
-	display:block;
-}
-
-header {
+#header {
 	padding-top:30px;
-	height:60px;
+	height:70px;
 	padding-left:5px;
 }
 
-	header h1 {
+	#header h1 {
 		font-size:3.4em;
 
 	}
 
-	header h2 {
+	#header h2 {
 		font-size:1em;
 		color:#8e2800;
 	}
 
-	header h1, header h2 {
+	#header h1, #header h2 {
 		margin:0px;
 		padding:0px;
 		line-height:100%;
 	}
 
-	header h2 span {
+	#header h2 span {
 		text-decoration:underline;
 		color:#00F;
 	}
 	
-/* = sections */
-	
-section#home-heading {
-	padding:70px 0px;
+/* = buttons & labels */
+
+.provider-button a {
+	display:block;
+	font-size:1.2em;
+	font-weight:bold;
+	color:#000;
+	text-decoration:none;
+	border:#999 1px solid;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:10px 15px;
+	background:#c6c6c6 url(images/bg-provider-button.png) 0 top repeat-x;
+	text-shadow:0 1px #e1e1e1;
 }
 
-	section#home-heading h3 {
+.provider-button a span {
+	display:block;
+	padding-left:45px;
+}
+
+.provider-button a.twitter span {
+	background:url(images/provider-twitter.png) top left no-repeat;
+}
+
+.provider-button a.facebook {
+	color:#b1b1b1;
+}
+
+.provider-button a.facebook span {
+	background:url(images/provider-facebook.png) 4px 2px no-repeat;
+}
+
+.provider-button a:hover {
+	background-position:0 -10px;
+}
+
+.provider-button a.facebook:hover {
+	background-position:0 0;
+	cursor:default;
+}
+
+p.free {
+	background:url(images/label-free.png) top left no-repeat;
+	padding:10px 0px;
+	padding-left:70px;
+}
+
+/* = sections */
+	
+#home-heading {
+	padding-top:50px;
+	height:270px;
+}
+
+	#home-heading h3 {
 		color:#8e2800;
 	}
 	
-section#home-more {
+#home-more {
 	color:#666;
+	padding-top:50px;
 }
 
-	section#home-more h3 {
+	#home-more h3 {
 		font-weight:bold;
 	}
+	
+	
+/* = blocks */
+
+.two-step ul {
+	margin:0px;
+	padding:0px;
+}
+
+.two-step li {
+	list-style:none;
+	margin-left:0px;
+	font-size:1em;
+	padding:10px 0px;
+	padding-left:45px;
+}
+
+	.two-step li.unlock {
+		background:url(images/ico-unlock.png) 0px 5px no-repeat;
+		padding-top:22px;
+	}
+	
+	.two-step li.check {
+		background:url(images/ico-check.png) 0px 10px no-repeat;
+	}
+	
+/* = footer */
+		
+#footer {
+	padding-left:5px;
+}

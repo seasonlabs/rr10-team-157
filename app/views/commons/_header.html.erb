@@ -1,5 +1,5 @@
-<header class="container_24">
+<div id="header" class="container_24">
 	<h1>linkodrama</h1>
 	<h2>Don't miss a <span>link</span></h2>
     <%= link_to "Sign out", sessions_destroy_url, :id => current_user.authorizations.id if signed_in? %>
-</header>
+</div>
