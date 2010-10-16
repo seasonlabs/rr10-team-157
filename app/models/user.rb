@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
     
     posts.each do |post|
       if link = post['text'].match(/(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?/)
-        links.create :short_url => link, :title => '', :description => '', :sender => post['user']['screen_name'], :post_id => post['id'], :post_date => post['created_at']
+        links.find_or_create_by_post_id(:short_url => link, :title => '', :description => '', :sender => post['user']['screen_name'], :post_id => post['id'], :post_date => post['created_at'])
       end
     end
     
