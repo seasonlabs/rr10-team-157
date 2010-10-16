@@ -59,4 +59,6 @@ Linkodrama::Application.routes.draw do
   match '/auth/failure', :to => 'sessions#failure'
   
   match '/sessions/destroy', :to => 'sessions#destroy'
+  
+  match 'links', :to => 'links#index'
 end

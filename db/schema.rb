@@ -10,12 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016093622) do
+ActiveRecord::Schema.define(:version => 20101016120630) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "links", :force => true do |t|
+    t.string   "short_url"
+    t.string   "url"
+    t.string   "title"
+    t.text     "description"
+    t.string   "sender"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
