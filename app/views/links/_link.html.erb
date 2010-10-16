@@ -1,2 +1,11 @@
-<li><%= link_to link.short_url, link.short_url %></li>
-<li><%= link.sender %></li>
+
+<div class="link">
+
+	<ul>
+		<li><%= link.post_date.to_s %></li>
+		<li><%= link_to link.short_url, link.short_url %></li>
+		<li>Page title</li>
+		<li>By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
+	</ul>
+
+</div>

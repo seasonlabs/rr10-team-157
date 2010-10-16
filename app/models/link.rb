@@ -5,7 +5,7 @@ class Link < ActiveRecord::Base
   belongs_to :user
   
   def sender
-    '@' + self[:sender]
+    self[:sender]
   end
   
   
