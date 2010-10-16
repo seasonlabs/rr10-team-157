@@ -3,5 +3,16 @@
 	<div id="links">
 		<h3>Your link stream</h3>
 	    <%= render :partial => 'link', :collection => @links %>
+	
+		<script type="text/javascript">
+			$('#links a').tipsy({
+						gravity: 'sw'
+			});
+			
+			$('#links span').tipsy({
+						gravity: 's'
+			});
+		</script>
+	
 	</div>
 </div>
