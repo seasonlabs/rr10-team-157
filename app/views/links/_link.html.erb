@@ -2,7 +2,7 @@
 <div class="link">
 
 	<ul>
-		<li><%= link.post_date.strftime('%d/%m/%Y') %></li>
+		<li><%= link.post_date.strftime('%d/%m/%Y') if !link.post_date.blank? %></li>
 		<li><%= link_to link.short_url, link.short_url %></li>
 		<li>Page title</li>
 		<li>By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
