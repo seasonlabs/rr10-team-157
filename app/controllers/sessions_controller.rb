@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    auth = request.env['rack.auth']
+    auth = request.env['omniauth.auth']
     unless @auth = Authorization.find_from_hash(auth)
       # Create a new user or add an auth to existing user, depending on
       # whether there is already a user signed in.
@@ -9,7 +9,10 @@ class SessionsController < ApplicationController
     
     # Log the authorizing user in.
     self.current_user = @auth.user
-  
+    access_token = request.env['omniauth.auth']['extra']['access_token']
+    
+    self.current_user.get_links(access_token)
+    
     redirect_to links_url
   end
   
