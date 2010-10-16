@@ -6,6 +6,7 @@ class CreateLinks < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :sender
+      t.references :user
 
       t.timestamps
     end

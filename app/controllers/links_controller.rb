@@ -5,9 +5,7 @@ class LinksController < ApplicationController
     @links = Link.all
 
     respond_to do |format|
-      format.html do
-        
-      end # index.html.erb
+      format.html # index.html.erb
       format.xml  { render :xml => @links }
     end
   end
