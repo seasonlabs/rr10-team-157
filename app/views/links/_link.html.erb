@@ -1,12 +1,11 @@
-
 <div class="link">
-
 	<ul>
-		<li><%= link.post_date.strftime('%d/%m/%Y') %></li>
-		<li><%= link_to link.short_url, link.short_url %></li>
-		<li>Page title - Page description</li>
-		<li>By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
-		<li><a href="#">Share in Twitter</a> <a href="#">Share in Facebook</a> <a href="#">Share in Delicious</a></li>
+		<li class="grid_1"><%= link.post_date.strftime('%d/%m/%Y') %></li>
+		<li class="grid_7"><%= link_to link.short_url, link.short_url %></li>
+		<li class="grid_7">Page title</li>
+		<li class="grid_4">By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
+		<li class="grid_4 actions"><a href="#" class="twitter">Share in Twitter</a> <a href="#" class="facebook">Share in Facebook</a> <a href="#" class="delicious">Share in Delicious</a></li>
+		<li class="grid_1"><a href="#" class="delete">Delete</a></li>
 	</ul>
-
+<div class="clear"></div>
 </div>

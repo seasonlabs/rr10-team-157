@@ -133,6 +133,25 @@ p.free {
 		background:url(images/ico-check.png) 0px 10px no-repeat;
 	}
 	
+.greeting {
+	margin-top:65px;
+}
+
+#links {
+	margin-top:50px;
+}	
+
+	#links h3 {
+		color:#666;
+		margin-left:5px;
+		font-weight:bold;
+	}
+	
+	.link {
+		border-bottom:#e5e5e5 1px solid;
+		padding:0px 0px 10px 0px;
+	}
+
 /* = footer */
 		
 #footer {
