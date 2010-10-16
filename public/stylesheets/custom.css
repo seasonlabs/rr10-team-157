@@ -1,0 +1,57 @@
+body {
+	background: #fff url(images/bg-home.png) top repeat-x;
+	color: #333;
+	font-size:87.5%;
+}
+
+h1, h2, h3 {
+	font-weight:normal;
+}
+
+header, footer, section {
+	display:block;
+}
+
+header {
+	padding-top:30px;
+	height:60px;
+}
+
+	header h1 {
+		font-size:3.4em;
+
+	}
+
+	header h2 {
+		font-size:1em;
+		color:#8e2800;
+	}
+
+	header h1, header h2 {
+		margin:0px;
+		padding:0px;
+		line-height:100%;
+	}
+
+	header h2 span {
+		text-decoration:underline;
+		color:#00F;
+	}
+	
+/* = sections */
+	
+section#home-heading {
+	padding:70px 0px;
+}
+
+	section#home-heading h3 {
+		color:#8e2800;
+	}
+	
+section#home-more {
+	color:#666;
+}
+
+	section#home-more h3 {
+		font-weight:bold;
+	}
