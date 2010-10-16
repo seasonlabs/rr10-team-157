@@ -1,9 +1,12 @@
 <%= render :partial => "commons/html-header" %>
+
+<body class="links">
 	
 		<%= render :partial => "commons/header" %>
-		
+		<%= render :partial => "links/user-greeting" %>
+
 		<%= yield %>
 			
 		<%= render :partial => "commons/footer" %>
-
+</body>
 <%= render :partial => "commons/html-footer" %>

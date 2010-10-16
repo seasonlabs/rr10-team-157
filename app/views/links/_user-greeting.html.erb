@@ -1,0 +1,5 @@
+<div class="container_24 greeting">
+	<div class="grid_24">
+		<h3>Welcome, Xavi Blanch <span>Not you? <%= link_to "Sign out", sessions_destroy_url, :id => current_user.authorizations.id if signed_in? %></span></h3>
+	</div>
+</div>

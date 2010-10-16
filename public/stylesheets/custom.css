@@ -4,6 +4,10 @@ body {
 	font-size:87.5%;
 }
 
+body.links {
+	background: #fff url(images/bg-links.png) top repeat-x;	
+}
+
 h1, h2, h3 {
 	font-weight:normal;
 }
@@ -129,6 +133,36 @@ p.free {
 		background:url(images/ico-check.png) 0px 10px no-repeat;
 	}
 	
+.greeting {
+	margin-top:65px;
+}
+
+#links {
+	margin-top:50px;
+}	
+
+	#links h3 {
+		color:#666;
+		margin-left:5px;
+		font-weight:bold;
+	}
+	
+	.link {
+		border-bottom:#e5e5e5 1px solid;
+		padding:15px 0px;
+		color:#666;
+		font-size:.9em;
+	}
+	
+	.link .delete {
+		display:block;
+		overflow:hidden;
+		width:16px;
+		height:16px;
+		text-indent:-500px;
+		background:url(images/ico_delete.png) right no-repeat;
+	}
+
 /* = footer */
 		
 #footer {
