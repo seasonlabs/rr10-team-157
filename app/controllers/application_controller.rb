@@ -17,4 +17,12 @@ protected
     @current_user = user
     session[:user_id] = user.id
   end
+  
+  def access_token=(access_token)
+    session[:access_token] = access_token
+  end
+  
+  def access_token
+    session[:access_token]
+  end
 end
