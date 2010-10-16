@@ -154,6 +154,14 @@ p.free {
 		font-size:.9em;
 	}
 	
+	.link a {
+		color:#49d1fd;
+	}
+	
+	.link a:visited {
+		color:#551A8B;
+	}
+	
 	.link .delete {
 		display:block;
 		overflow:hidden;
@@ -161,6 +169,10 @@ p.free {
 		height:16px;
 		text-indent:-500px;
 		background:url(images/ico_delete.png) right no-repeat;
+	}
+	
+	.link .social {
+		text-align:center;
 	}
 
 /* = footer */
