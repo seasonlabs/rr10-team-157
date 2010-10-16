@@ -2,17 +2,18 @@
 <div class="container_24">
 	<div id="links">
 		<h3>Your link stream</h3>
-	    <%= render :partial => 'link', :collection => @links %>
-	
-		<script type="text/javascript">
-			$('#links a').tipsy({
-						gravity: 'sw'
-			});
-			
-			$('#links span').tipsy({
-						gravity: 's'
-			});
-		</script>
-	
+		<div class="grid_24">Today</div>
+		<div class="clear"></div>
+	    <%= render :partial => 'link', :collection => @links %>	
 	</div>
 </div>
+
+<script type="text/javascript">
+	$('#links a').tipsy({
+				gravity: 'sw'
+	});
+	
+	$('#links span').tipsy({
+				gravity: 's'
+	});
+</script>
