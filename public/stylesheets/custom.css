@@ -1,30 +1,57 @@
 body {
-	background: #fff;
+	background: #fff url(images/bg-home.png) top repeat-x;
 	color: #333;
-	font-size: 87,5%;
+	font-size:87.5%;
 }
 
-header, footer {
+h1, h2, h3 {
+	font-weight:normal;
+}
+
+header, footer, section {
 	display:block;
 }
 
-a {
-
+header {
+	padding-top:30px;
+	height:60px;
 }
 
-a:hover {
-}
+	header h1 {
+		font-size:3.4em;
 
-h1 {
-}
+	}
 
-h2 {
-	padding: 20px 0 0;
-}
+	header h2 {
+		font-size:1em;
+		color:#8e2800;
+	}
 
-p {
-}
+	header h1, header h2 {
+		margin:0px;
+		padding:0px;
+		line-height:100%;
+	}
 
-.container_24 {
+	header h2 span {
+		text-decoration:underline;
+		color:#00F;
+	}
 	
+/* = sections */
+	
+section#home-heading {
+	padding:70px 0px;
 }
+
+	section#home-heading h3 {
+		color:#8e2800;
+	}
+	
+section#home-more {
+	color:#666;
+}
+
+	section#home-more h3 {
+		font-weight:bold;
+	}
