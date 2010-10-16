@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   
   def get_links(access_token)
      # use the access token as an agent to get the friends timeline
-    response = access_token.request(:get, "http://api.twitter.com/1/statuses/friends_timeline.json")
+    response = access_token.request(:get, "http://api.twitter.com/1/statuses/friends_timeline.json?count=200")
     
     posts = ActiveSupport::JSON.decode(response.body)
     
