@@ -149,6 +149,15 @@ p.free {
 	margin-top:65px;
 }
 
+	.greeting h3 span {
+		font-size:.6em;
+	}
+	
+	.greeting a, .greeting a:visited {
+		color:#468966;
+	}
+
+
 #links {
 	margin-top:50px;
 }	
