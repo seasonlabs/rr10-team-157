@@ -1,7 +1,7 @@
 <div class="link">
 	<ul>
 		<li class="grid_1"><%= link.post_date.strftime('%d/%m/%Y') %></li>
-		<li class="grid_10"><%= link_to link.short_url, link.short_url %></li>
+		<li class="grid_10"><%= link_to link.url, link.url %></li>
 		<li class="grid_6"><%= link.title %> </li>
 		<li class="grid_4">By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
 		<li class="grid_2"><%= link_to image_tag("ico_twitter.png"),"http://www.twitter.com" %> <%= link_to image_tag("ico_facebook.png"),"http://www.facebook.com" %> <%= link_to image_tag("ico_delicious.png"),"http://www.delicious.com" %></li>
