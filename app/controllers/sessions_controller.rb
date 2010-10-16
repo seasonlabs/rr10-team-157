@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     # Log the authorizing user in.
     self.current_user = @auth.user
   
-    redirect_to root_url
+    redirect_to links_url
   end
   
   def destroy
