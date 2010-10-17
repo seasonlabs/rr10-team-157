@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
     
     posts.each do |post|
       #begin
-        if link = post['text'].match(/(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?/)
+        if link = post['text'].match(/(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/[a-zA-Z0-9$_.+!*,;\?:@&~=%-]*)?/)
           #create the link in the db if it doesn't exist
           links.create(
             :short_url => link.to_s, 

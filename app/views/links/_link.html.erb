@@ -5,13 +5,17 @@
 <div class="link">
 	<ul>
 		<li class="grid_1"><%= link.post_date.strftime('%H:%M:%S') %></li>
-		<li class="grid_7"><%= link_to  truncate(link.url,:length=>40), link.url,:title => link.url %></li>
+		<li class="grid_7"><%= link_to truncate(link.url,:length=>40), link.url,:title => link.url %></li>
 		<li class="grid_10"><span title="<%= link.title %>"><%= truncate(link.title,:length=>60) %></span></li>
 		<li class="grid_4">By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
 		<li class="grid_2 social"><%= link_to image_tag("ico_twitter.png"),"http://www.twitter.com" %> <%= link_to image_tag("ico_facebook.png"),"http://www.facebook.com/sharer.php?u=" + link.short_url + "&t=" + link.title %> </li>
 	</ul>
 	<div class="clear"></div>
 </div>
+
+<script>
+  
+</script>
 
 <div class="link">
 	<ul>
