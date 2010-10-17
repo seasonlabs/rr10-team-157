@@ -228,6 +228,15 @@ p.free {
 		padding-left:22px;
 	}
 
+.pagination {
+	margin-top:15px;
+	text-align:center;
+}
+
+.pagination em {
+	font-style:normal;
+	font-size:1.2em;
+}
 /* = footer */
 		
 #footer {
