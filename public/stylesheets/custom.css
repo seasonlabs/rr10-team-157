@@ -21,7 +21,12 @@ a:hover {
 }
 
 h1, h2, h3 {
+	font-family: 'PT Sans','Helvetica Neue', Arial, 'Liberation Sans',FreeSans,sans-serif;
 	font-weight:normal;
+}
+
+h1 {
+	font-weight:bold;
 }
 
 #header {
