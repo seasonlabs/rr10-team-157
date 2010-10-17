@@ -9,7 +9,7 @@ class LinksController < ApplicationController
   def index
     @links = current_user.links.paginate :page => params[:page], :per_page => 10, :order => 'post_date DESC'
     
-    #ActiveSupport::json(open('http://twitter.com/statuses/user_timeline/linkodrama.json'))
+    @linkodrama_timeline = ActiveSupport::JSON.decode(open('http://twitter.com/statuses/user_timeline/linkodrama.json'))
     
     respond_to do |format|
       format.html # index.html.erb
