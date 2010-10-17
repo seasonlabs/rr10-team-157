@@ -27,7 +27,6 @@ h1, h2, h3 {
 #header {
 	padding-top:30px;
 	height:70px;
-	padding-left:5px;
 }
 
 	#header h1 {
@@ -49,6 +48,11 @@ h1, h2, h3 {
 	#header h2 span {
 		text-decoration:underline;
 		color:#00F;
+	}
+	
+	#header .counter h3 {
+		margin-top:20px;
+
 	}
 	
 /* = buttons & labels */
@@ -146,11 +150,12 @@ p.free {
 	}
 	
 .greeting {
-	margin-top:65px;
+	margin-top:50px;
 }
 
 	.greeting h3 span {
 		font-size:.6em;
+		display:block;
 	}
 	
 	.greeting a, .greeting a:visited {
@@ -173,6 +178,7 @@ p.free {
 		padding:15px 0px;
 		color:#666;
 		font-size:.9em;
+		clear:both;
 	}
 	
 	.link .delete {
