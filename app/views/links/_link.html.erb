@@ -14,7 +14,10 @@
       <span <%= @title_class %> title="<%= link.title %>"><%= truncate(link.title, :length=>60) %></span>
     </li>
 		<li class="grid_4">By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
-		<li class="grid_2 social"><%= link_to image_tag("ico_twitter.png"),"http://www.twitter.com" %> <%= link_to image_tag("ico_facebook.png"),"http://www.facebook.com/sharer.php?u=" + link.short_url + "&t=" + link.title %> </li>
+		<li class="grid_2 social">
+			<%= link_to image_tag("ico_twitter.png"),"http://twitter.com/home?status="+ link.short_url, :target => "_blank" %> 
+			<%= link_to image_tag("ico_facebook.png"),"http://www.facebook.com/sharer.php?u=" + link.short_url + "&t=" + link.title, :target => "_blank" %>
+		</li>
 	</ul>
 	<div class="clear"></div>
 </div>
