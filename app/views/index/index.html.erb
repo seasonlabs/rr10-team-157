@@ -44,7 +44,13 @@
 	
 	<div class="block grid_7">
 		<h3>Latest news</h3>
-
+    <div id="news">
+    <% @linkodrama_news.each do |post| %>
+      <%= post['text'] %><br/>
+      @<%= post['name'] %><br/>
+      <%= post['created_at'] %>
+    <% end %>  
+    </div>
 	</div>
 	
 	<div class="clear"></div>
