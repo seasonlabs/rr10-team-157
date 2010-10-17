@@ -1,12 +1,18 @@
-<div class="grid_24">
-  <%= distance_of_time_in_words(link.post_date, Time.now) if @last_day != link.post_date.day %>
-</div>
+<% if @last_day != link.post_date.day %>
+  <div class="grid_24 time-ago">
+      <%=distance_of_time_in_words(link.post_date, Time.now,true) if @last_day != link.post_date.day %> ago
+  </div>
+<% end %>
 <% @last_day = link.post_date.day %>
 <div class="link">
 	<ul>
-		<li class="grid_1"><%= link.post_date.strftime('%H:%M:%S') %></li>
-		<li class="grid_7"><%= link_to truncate(link.short_url,:length=>40), link.short_url, :title => link._short_url %></li>
-		<li class="grid_10"><span title="<%= link.title %>"><%= truncate(link.title, :length=>60) %></span></li>
+		<li class="grid_1"><%= link.post_date.strftime('%H:%M') %></li>
+		<li class="grid_7"><%= link_to truncate(link.short_url,:length=>40), link.short_url, :title => link.short_url %></li>
+		<li class="grid_10">
+      <% @title_class = '' %>
+      <% @title_class = ' class=warning' if link.title.first(5) == "Sorry" %>
+      <span <%= @title_class %> title="<%= link.title %>"><%= truncate(link.title, :length=>60) %></span>
+    </li>
 		<li class="grid_4">By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
 		<li class="grid_2 social"><%= link_to image_tag("ico_twitter.png"),"http://www.twitter.com" %> <%= link_to image_tag("ico_facebook.png"),"http://www.facebook.com/sharer.php?u=" + link.short_url + "&t=" + link.title %> </li>
 	</ul>
@@ -14,12 +20,12 @@
 </div>
 
 <script>
-  $(".grid_7").load(<%= process_url_details_url %>)
+  //$(".grid_7").load()
 </script>
 
 <div class="link">
 	<ul>
-		<li class="grid_1"><%= link.post_date.strftime('%d/%m/%Y') %></li>
+		<li class="grid_1"><%= link.post_date.strftime('%H:%M') %></li>
 		<li class="grid_7"><%= image_tag('ajax-loader.gif') %></li>
 		<li class="grid_10"><%= image_tag('ajax-loader.gif') %></li>
 		<li class="grid_4">By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
