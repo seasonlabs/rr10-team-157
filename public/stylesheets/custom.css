@@ -115,6 +115,22 @@ p.free {
 		color:#8e2800;
 	}
 	
+	#home-heading .stop-drama {
+		background:url(images/heading-lines.png) 415px 30px no-repeat;
+	}
+	
+	#home-heading .two-step {
+				background:url(images/heading-lines.png) 210px 30px no-repeat;
+	}
+	
+	#home-more .as-easy {
+		background:url(images/heading-lines-g.png) 415px 30px no-repeat;
+	}
+	
+	#home-more .future-features {
+				background:url(images/heading-lines-g.png) 210px 30px no-repeat;
+	}
+	
 #home-more {
 	color:#666;
 	padding-top:50px;
@@ -173,6 +189,13 @@ p.free {
 		font-weight:bold;
 	}
 	
+	#links .time-ago {
+		
+		padding:20px;
+		padding-left:0px;
+		
+	}
+	
 	.link {
 		border-bottom:#e5e5e5 1px solid;
 		padding:15px 0px;
@@ -192,6 +215,12 @@ p.free {
 	
 	.link .social {
 		text-align:center;
+	}
+	
+	.link .warning {
+		display:block;
+		background:url(images/ico_alert.png) no-repeat;
+		padding-left:22px;
 	}
 
 /* = footer */
