@@ -1,1 +1,1 @@
-<span class="<%= "warning" if @link.title.first(5) == 'Sorry' %>" title="<%= @link.title %>"><%= truncate(@link.title, :length=>60) %></span>
+<span class="<%= "warning" if @link.title.blank? %>" title="<%= @link.title %>"><%= @link.title.blank? ? 'Sorry, no page title found!' : truncate(@link.title, :length=>60) %></span>
