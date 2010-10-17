@@ -8,12 +8,4 @@ class Link < ActiveRecord::Base
     self['title'].blank? ? 'Sorry, no page title found!' : self['title']
   end
   
-  def url
-    if self['url'].blank?
-      self['short_url']
-    else
-      self['url']
-    end
-  end
-  
 end

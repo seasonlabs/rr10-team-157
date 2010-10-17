@@ -26,9 +26,7 @@
         $($(".grid_10")[counter]).html('<%= image_tag('ajax-loader.gif') %>'); 
         $($(".grid_10")[counter]).load("/links/get_page_title/" + linkIds[counter], function() {
           counter++;
-          setTimeout(function() {
-            requestDetails(counter);  
-          }, 500);
+          requestDetails(counter);  
         });
       });
       
