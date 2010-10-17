@@ -1,6 +1,10 @@
+<div class="grid_24">
+  <%= distance_of_time_in_words(link.post_date, Time.now) if @last_day != link.post_date.day %>
+</div>
+<% @last_day = link.post_date.day %>
 <div class="link">
 	<ul>
-		<li class="grid_1"><%= link.post_date.strftime('%d/%m/%Y') %></li>
+		<li class="grid_1"><%= link.post_date.strftime('%H:%M:%S') %></li>
 		<li class="grid_7"><%= link_to  truncate(link.url,:length=>40), link.url,:title => link.url %></li>
 		<li class="grid_10"><span title="<%= link.title %>"><%= truncate(link.title,:length=>60) %></span></li>
 		<li class="grid_4">By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
