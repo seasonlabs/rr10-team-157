@@ -2,8 +2,11 @@
 <div class="container_24">
 	<div id="links">
 		<h3>Your link stream</h3>
-	  <%= render :partial => 'link', :collection => @links %>	
+	  <%= render :partial => 'link', :collection => @links %>
+	<div class="grid_24">	
 	  <%= will_paginate @links %>
+	</div>
+	<div class="clear"></div>
 	</div>
 </div>
 
