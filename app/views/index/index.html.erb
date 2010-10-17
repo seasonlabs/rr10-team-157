@@ -46,9 +46,12 @@
 		<h3>Latest news</h3>
     <div id="news">
     <% @linkodrama_news.each do |post| %>
-      <%= post['text'] %><br/>
-      @<%= post['name'] %><br/>
-      <%= post['created_at'] %>
+		
+		<div class="twit">
+			<span class="date"><%= distance_of_time_in_words(post['created_at'], Time.now,true) %> ago by <%= link_to "@linkodrama","http://www.twitter.com/linkodrama" %></span>
+			<p><%= post['text'] %></p>
+		</div>
+
     <% end %>  
     </div>
 	</div>

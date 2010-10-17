@@ -237,6 +237,16 @@ p.free {
 	font-style:normal;
 	font-size:1.2em;
 }
+
+#news .date {
+	font-size:.9em;
+	color:#999;
+}
+
+#news p {
+	color:#333;
+}
+
 /* = footer */
 		
 #footer {
