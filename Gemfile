@@ -35,3 +35,4 @@ gem 'omniauth'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem "will_paginate", "~> 3.0.pre2"
+gem 'rails3_acts_as_paranoid'
