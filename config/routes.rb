@@ -61,4 +61,6 @@ Linkodrama::Application.routes.draw do
   match '/sessions/destroy', :to => 'sessions#destroy'
   
   match 'links', :to => 'links#index'
+  match 'links/process_url_details/:id', :to => 'links#process_url_details'
+  match 'links/get_page_title/:id', :to => 'links#get_page_title'
 end

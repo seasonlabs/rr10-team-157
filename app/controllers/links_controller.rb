@@ -1,4 +1,9 @@
+require 'nokogiri'
+require 'open-uri'
+
 class LinksController < ApplicationController
+  layout 'application', :except => [:process_short_url, :get_page_title]
+  
   # GET /links
   # GET /links.xml
   def index
@@ -36,5 +41,24 @@ class LinksController < ApplicationController
       format.html { redirect_to(links_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def process_short_url
+    @link = Link.find(params[:id])
+    
+    begin
+      site = open(@link.short_url)
+      doc = Nokogiri::HTML(site)
+      
+      @link.title = doc.css('title').children.text
+      @link.url = site.base_uri
+      
+      @link.save
+    rescue
+    end
+  end
+  
+  def get_page_title
+    @link = Link.find(params[:id]) 
   end
 end

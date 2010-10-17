@@ -3,7 +3,7 @@ require 'open-uri'
 
 class Link < ActiveRecord::Base
   belongs_to :user
-  before_save :request_values
+  #before_save :request_values
 
   def title   
     self['title'].blank? ? 'Sorry, no page title found!' : self['title']
