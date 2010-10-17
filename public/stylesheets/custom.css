@@ -200,6 +200,12 @@ p.free {
 	.link .social {
 		text-align:center;
 	}
+	
+	.link .warning {
+		display:block;
+		background:url(images/ico_alert.png) no-repeat;
+		padding-left:22px;
+	}
 
 /* = footer */
 		
