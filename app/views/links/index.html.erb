@@ -8,10 +8,7 @@
 
 <script type="text/javascript">
   $(function() {
-    var counter = 0;
-    var linkIds = new Array();
-    
-    requestDetails(0);
+    requestDetails();
     
   	$('#links a').tipsy({
   				gravity: 'sw'
@@ -22,11 +19,11 @@
   	});
 	});
 	
-	function requestDetails(index) {
+	function requestDetails() {
 	  while (counter < $(".grid_7").length) { 
-      $(".grid_7")[counter]).load("/links/get_page_title/" + linkIds[counter], function() {
+      $($(".grid_7")[counter]).load("/links/get_page_title/" + linkIds[counter], function() {
         requestDetails(counter++);
-      });	  
+      });
     }
-	}
+  }
 </script>
