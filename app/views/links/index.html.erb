@@ -9,14 +9,6 @@
 <script type="text/javascript">
   $(function() {
     requestDetails();
-    
-  	$('#links a').tipsy({
-  				gravity: 'sw'
-  	});
-  	
-  	$('#links span').tipsy({
-  				gravity: 's'
-  	});
 	});
 	
 	function requestDetails() {
@@ -26,9 +18,20 @@
         $($(".grid_10")[counter]).html('<%= image_tag('ajax-loader.gif') %>'); 
         $($(".grid_10")[counter]).load("/links/get_page_title/" + linkIds[counter], function() {
           counter++;
-          requestDetails(counter);  
+          requestDetails(counter);
+          tipsify(); 
         });
       });
     }
+  }
+  
+  function tipsify() {
+    $('#links a').tipsy({
+          gravity: 'sw'
+    });
+    
+    $('#links span').tipsy({
+          gravity: 's'
+    });
   }
 </script>
