@@ -173,6 +173,13 @@ p.free {
 		font-weight:bold;
 	}
 	
+	#links .time-ago {
+		
+		padding:20px;
+		padding-left:0px;
+		
+	}
+	
 	.link {
 		border-bottom:#e5e5e5 1px solid;
 		padding:15px 0px;
