@@ -7,11 +7,26 @@
 </div>
 
 <script type="text/javascript">
-	$('#links a').tipsy({
-				gravity: 'sw'
+  $(function() {
+    var counter = 0;
+    var linkIds = new Array();
+    
+    requestDetails(0);
+    
+  	$('#links a').tipsy({
+  				gravity: 'sw'
+  	});
+  	
+  	$('#links span').tipsy({
+  				gravity: 's'
+  	});
 	});
 	
-	$('#links span').tipsy({
-				gravity: 's'
-	});
+	function requestDetails(index) {
+	  while (counter < $(".grid_7").length) { 
+      $(".grid_7")[counter]).load("/links/get_page_title/" + linkIds[counter], function() {
+        requestDetails(counter++);
+      });	  
+    }
+	}
 </script>

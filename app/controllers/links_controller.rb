@@ -51,6 +51,7 @@ class LinksController < ApplicationController
       doc = Nokogiri::HTML(site)
       
       @link.title = doc.css('title').children.text
+      @link.description = doc.css('description').children.text
       @link.url = site.base_uri
       
       @link.save
