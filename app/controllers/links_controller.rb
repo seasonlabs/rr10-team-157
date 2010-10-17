@@ -57,6 +57,7 @@ class LinksController < ApplicationController
         
         @link.save
       rescue
+        @link.url = @link.short_url
       end
     end
   end
