@@ -1,4 +1,7 @@
 require 'bundler/capistrano'
+$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
+require "rvm/capistrano"                  # Load RVM's capistrano plugin.
+set :rvm_ruby_string, '1.9.2'        # Or whatever env you want it to run in.
 
 set :application, "linkodrama"
 set :repository,  "git@github.com:railsrumble/rr10-team-157.git"
@@ -8,11 +11,12 @@ set :scm, :git
 
 set :user, "rumble"
 
-role :web, "li197-107.members.linode.com/"                          # Your HTTP server, Apache/etc
-role :app, "li197-107.members.linode.com/"                          # This may be the same as your `Web` server
+role :web, "li197-107.members.linode.com"                          # Your HTTP server, Apache/etc
+role :app, "li197-107.members.linode.com"                          # This may be the same as your `Web` server
 role :db,  "li197-107.members.linode.com", :primary => true # This is where Rails migrations will run
 
 set :deploy_to, "/home/#{user}/#{application}"
+set :deploy_via, 'copy'
 set :use_sudo, false
 set :keep_releases, 5
 
