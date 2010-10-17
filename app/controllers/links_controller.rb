@@ -46,16 +46,18 @@ class LinksController < ApplicationController
   def process_short_url
     @link = Link.find(params[:id])
     
-    begin
-      site = open(@link.short_url)
-      doc = Nokogiri::HTML(site)
-      
-      @link.title = doc.css('title').children.text
-      @link.description = doc.css('description').children.text
-      @link.url = site.base_uri
-      
-      @link.save
-    rescue
+    if @link.url.blank?
+      begin
+        site = open(@link.short_url)
+        doc = Nokogiri::HTML(site)
+        
+        @link.title = doc.css('title').children.text
+        @link.description = doc.css('description').children.text
+        @link.url = site.base_uri.to_s
+        
+        @link.save
+      rescue
+      end
     end
   end
   

@@ -20,10 +20,19 @@
 	});
 	
 	function requestDetails() {
-	  while (counter < $(".grid_7").length) { 
-      $($(".grid_7")[counter]).load("/links/get_page_title/" + linkIds[counter], function() {
-        requestDetails(counter++);
+	  if (counter < $(".grid_10").length) {
+	    $($(".grid_7")[counter]).html('<%= image_tag('ajax-loader.gif') %>'); 
+      $($(".grid_7")[counter]).load("/links/process_short_url/" + linkIds[counter], function() {
+        $($(".grid_10")[counter]).html('<%= image_tag('ajax-loader.gif') %>'); 
+        $($(".grid_10")[counter]).load("/links/get_page_title/" + linkIds[counter], function() {
+          counter++;
+          setTimeout(function() {
+            requestDetails(counter);  
+          }, 500);
+        });
       });
+      
+	    
     }
   }
 </script>
