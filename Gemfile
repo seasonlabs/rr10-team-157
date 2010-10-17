@@ -32,6 +32,6 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql'
 
 gem 'omniauth'
-gem 'twitter'
 gem 'jquery-rails'
 gem 'nokogiri'
+gem "will_paginate", "~> 3.0.pre2"
