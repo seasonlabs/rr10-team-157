@@ -115,6 +115,22 @@ p.free {
 		color:#8e2800;
 	}
 	
+	#home-heading .stop-drama {
+		background:url(images/heading-lines.png) 415px 30px no-repeat;
+	}
+	
+	#home-heading .two-step {
+				background:url(images/heading-lines.png) 210px 30px no-repeat;
+	}
+	
+	#home-more .as-easy {
+		background:url(images/heading-lines-g.png) 415px 30px no-repeat;
+	}
+	
+	#home-more .future-features {
+				background:url(images/heading-lines-g.png) 210px 30px no-repeat;
+	}
+	
 #home-more {
 	color:#666;
 	padding-top:50px;
