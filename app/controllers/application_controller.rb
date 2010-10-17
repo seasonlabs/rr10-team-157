@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  before_filter :user_stuff
+  
+  def user_stuff
+    @links_count = Link.count  
+  end
+  
 protected
 
   def current_user
