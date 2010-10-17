@@ -57,7 +57,6 @@ class LinksController < ApplicationController
         
         @link.save
       rescue
-        @link
       end
     end
   end
