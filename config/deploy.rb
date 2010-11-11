@@ -9,11 +9,11 @@ set :repository,  "git@github.com:railsrumble/rr10-team-157.git"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set :user, "rumble"
+set :user, "linkodrama"
 
-role :web, "li197-107.members.linode.com"                          # Your HTTP server, Apache/etc
-role :app, "li197-107.members.linode.com"                          # This may be the same as your `Web` server
-role :db,  "li197-107.members.linode.com", :primary => true # This is where Rails migrations will run
+role :web, "linkodrama.com"                          # Your HTTP server, Apache/etc
+role :app, "linkodrama.com"                          # This may be the same as your `Web` server
+role :db,  "linkodrama.com", :primary => true # This is where Rails migrations will run
 
 set :deploy_to, "/home/#{user}/#{application}"
 set :deploy_via, 'copy'
@@ -31,6 +31,6 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"
   end
 end

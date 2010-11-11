@@ -21,5 +21,5 @@ production:
   reconnect: false
   database: linkodrama
   pool: 5
-  username: rumble
-  password: rumbl3
+  username: linkodrama
+  password: l1nk0dr@m@
