@@ -1,1 +1,1 @@
-<%= link_to truncate(@link.url, :length=>40), @link.url, :title => @link.url, :target => '_blank'%>
+<%= link_to truncate(@link.url, :length=>40), @link.url, :title => @link.url, :target => '_blank', :onclick => "stats.record('#{@link.url}', '#{current_user.name}')"%>

@@ -12,3 +12,14 @@
 <script type="text/javascript">
     var stats = new CLStats("linkodrama"); // pass your application name here
 </script>
+
+<!-- Then, at some point on the page, call the record method and pass a string describing the action you want to track and the twitter screen name of the user who took the action. -->
+<a id="inbox" href="/app/inbox/" onclick="stats.record('inbox', USER_TWITTER_Screen_Name)">Inbox</a> // pass the user's twitter screen name
+
+<!-- Here's the same example for those who prefer to use jQuery. -->
+<a id="inbox" href="/app/inbox/">Inbox</a>
+<script type="text/javascript">
+    $("a#inbox").click(function() {
+        stats.record("inbox", USER_TWITTER_Screen_Name); // insert the variable that stores the user's twitter screen name
+    });
+</script>
