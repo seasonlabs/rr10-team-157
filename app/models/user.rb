@@ -7,8 +7,16 @@ class User < ActiveRecord::Base
   end
   
   def get_links(access_token)
-     # use the access token as an agent to get the friends timeline
-    response = access_token.request(:get, "http://api.twitter.com/1/statuses/friends_timeline.json?count=50")
+    since_id = ""
+    
+    # use the access token as an agent to get the friends timeline
+    auth = authorizations.find_by_provider(:twitter)
+
+    auth.inspect
+    
+    since_id = "&since_id=#{auth.last_oid}" unless auth.last_oid.blank?
+    
+    response = access_token.request(:get, "http://api.twitter.com/1/statuses/friends_timeline.json?count=200" + since_id)
     
     posts = ActiveSupport::JSON.decode(response.body)
     
@@ -29,5 +37,7 @@ class User < ActiveRecord::Base
       #end
     end
     
+    auth.last_oid = posts.last['id']
+    auth.save!
   end
 end
