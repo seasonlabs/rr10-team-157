@@ -12,10 +12,8 @@ class User < ActiveRecord::Base
     # use the access token as an agent to get the friends timeline
     auth = authorizations.find_by_provider(:twitter)
 
-    auth.inspect
-    
     since_id = "&since_id=#{auth.last_oid}" unless auth.last_oid.blank?
-    
+
     response = access_token.request(:get, "http://api.twitter.com/1/statuses/friends_timeline.json?count=200" + since_id)
     
     posts = ActiveSupport::JSON.decode(response.body)

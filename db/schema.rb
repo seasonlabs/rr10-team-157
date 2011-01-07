@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20110103113104) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "last_oid"
+    t.string   "last_oid"
   end
 
   create_table "links", :force => true do |t|
