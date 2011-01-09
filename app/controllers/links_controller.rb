@@ -10,7 +10,7 @@ class LinksController < ApplicationController
     #if params[:search]
     #  @links = current_user.links.limit(500).group(:short_url).paginate :page => params[:page], :per_page => 20, :order => 'post_date DESC'
     #else
-      @links = current_user.links.default.paginate :page => params[:page], :per_page => 20
+      @links = current_user.links.search(params[:search]).paginate :page => params[:page], :per_page => 20
     #end
     
 =begin
