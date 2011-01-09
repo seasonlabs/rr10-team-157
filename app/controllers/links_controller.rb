@@ -7,7 +7,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.xml
   def index
-    @links = current_user.links.paginate :page => params[:page], :per_page => 20, :order => 'post_date DESC'
+    @links = current_user.links.limit(500).paginate :page => params[:page], :per_page => 20, :order => 'post_date DESC'
 
 =begin
     #delete duplicates almost there TODO
