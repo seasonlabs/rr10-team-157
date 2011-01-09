@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
           links.create(
             :short_url => link.to_s, 
             :title => '', 
-            :description => '', 
+            :description => post['text'], 
             :sender => post['user']['screen_name'], 
             :post_id => post['id'], 
             :post_date => post['created_at']

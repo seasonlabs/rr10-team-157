@@ -8,6 +8,22 @@ class LinksController < ApplicationController
   # GET /links.xml
   def index
     @links = current_user.links.paginate :page => params[:page], :per_page => 20, :order => 'post_date DESC'
+
+=begin
+    #delete duplicates almost there TODO
+    dups = current_user.links.group(:short_url).count
+
+    @links.each_with_index do |link, i|
+      link.count = dups[link.short_url]
+      if dups[link.short_url] > 1
+        @links.delete_if do |v| 
+          v.short_url == link.short_url
+          puts v.short_url
+          puts "=====hit====="
+        end
+      end
+    end
+=end
     
     respond_to do |format|
       format.html # index.html.erb

@@ -7,13 +7,13 @@
 <div class="link">
 	<ul>
 		<li class="grid_1"><%= link.post_date.strftime('%H:%M') %></li>
-		<li class="grid_7"><%= link_to truncate(link.short_url,:length=>40), link.short_url, :title => link.short_url, :target => '_blank' %></li>
+		<li class="grid_7"><%= link_to truncate(link.short_url, :length=>40), link.short_url, :title => link.short_url, :target => '_blank' %></li>
 		<li class="grid_10">
       <% @title_class = '' %>
       <% @title_class = ' class=warning' if link.title.first(5) == "Sorry" %>
       <span <%= @title_class %> title="<%= link.title %>"><%= truncate(link.title, :length=>60) %></span>
     </li>
-		<li class="grid_4">By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender %></li>
+		<li class="grid_4">By <%= link_to "@" + link.sender, "http://www.twitter.com/" + link.sender, :title => link.description, :target => '_blank' %></li>
 		<li class="grid_2 social">
 			<%= link_to image_tag("ico_twitter.png"),"http://twitter.com/home?status="+ link.short_url, :target => "_blank" %> 
 			<%= link_to image_tag("ico_facebook.png"),"http://www.facebook.com/sharer.php?u=" + link.short_url + "&t=" + link.title, :target => "_blank" %>
