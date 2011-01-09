@@ -81,4 +81,9 @@ class LinksController < ApplicationController
   def get_page_title
     @link = Link.find(params[:id]) 
   end
+  
+  def refresh
+    reset_session
+    redirect_to root_url + "?refresh=twitter"
+  end
 end

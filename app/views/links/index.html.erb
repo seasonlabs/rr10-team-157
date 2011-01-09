@@ -2,6 +2,7 @@
 <div class="container_24">
 	<div id="links">
 		<h3>Your link stream</h3>
+		<%= link_to 'Update Links', links_refresh_url %>
 	  <%= render :partial => 'link', :collection => @links %>
   	<div class="grid_24">	
   	  <%= will_paginate @links %>

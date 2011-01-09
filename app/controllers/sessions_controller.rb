@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
   def destroy
     reset_session
     flash[:notice] = "You've been signed out"
+
     redirect_to root_url
   end
   

@@ -6,12 +6,17 @@ class IndexController < ApplicationController
   end
   
   def index
-    begin
-      @linkodrama_news = ActiveSupport::JSON.decode(open('http://twitter.com/statuses/user_timeline/linkodrama.json?count=3'))
-    rescue
-      @linkodrama_news = Array.new
-    end
     
-    render :layout => 'home'
+    if params[:refresh] == 'twitter'
+      redirect_to '/auth/twitter' 
+    else
+      begin
+        @linkodrama_news = ActiveSupport::JSON.decode(open('http://twitter.com/statuses/user_timeline/linkodrama.json?count=3'))
+      rescue
+        @linkodrama_news = Array.new
+      end
+    
+      render :layout => 'home'
+    end
   end
 end
