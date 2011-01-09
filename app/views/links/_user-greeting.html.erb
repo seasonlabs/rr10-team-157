@@ -1,5 +1,11 @@
 <div class="container_24 greeting">
 	<div class="grid_24">
+	  <% form_tag links_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+    <% end %>
 		<h3>Welcome, <%= current_user.name %>. You have <%= @links.total_entries %> links here.<span>Not you? <%= link_to "Sign out", sessions_destroy_url if signed_in? %></span></h3>
 	</div>
 </div>

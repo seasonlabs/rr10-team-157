@@ -7,8 +7,12 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.xml
   def index
-    @links = current_user.links.limit(500).group(:short_url).paginate :page => params[:page], :per_page => 20, :order => 'post_date DESC'
-
+    #if params[:search]
+    #  @links = current_user.links.limit(500).group(:short_url).paginate :page => params[:page], :per_page => 20, :order => 'post_date DESC'
+    #else
+      @links = current_user.links.default.paginate :page => params[:page], :per_page => 20
+    #end
+    
 =begin
     #delete duplicates almost there TODO
     dups = current_user.links.group(:short_url).count

@@ -8,4 +8,15 @@ class Link < ActiveRecord::Base
   
   belongs_to :user
   
+  scope :default, lambda {
+    limit(500).group(:short_url).order('post_date DESC')
+  }
+  
+  def self.search(search)
+    if search
+      where(['url LIKE ?', "%#{search}%"])
+    else
+      ##
+    end
+  end  
 end
